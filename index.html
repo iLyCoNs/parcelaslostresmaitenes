@@ -6,14 +6,13 @@
     <title>Parcelas Los Tres Maitenes | Fresia, Los Lagos</title>
     <meta name="description" content="Venta de parcelas en Los Tres Maitenes, comuna de Fresia. Naturaleza, tranquilidad y alta plusvalía en la Región de Los Lagos.">
     
-    <!-- Google Fonts: Montserrat para un look moderno y limpio -->
+    <!-- Google Fonts: Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome para iconos -->
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- VARIABLES DE COLOR (Basadas en image_336c3f.jpg) --- */
+        /* --- VARIABLES DE COLOR --- */
         :root {
             --green-acre: #6B7F54;
             --revere-green: #98AF86;
@@ -25,360 +24,77 @@
         }
 
         /* --- RESET & BASIC STYLES --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            color: var(--text-dark);
-            background-color: var(--bg-offwhite);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3 {
-            font-weight: 700;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
+        body { color: var(--text-dark); background-color: var(--bg-offwhite); line-height: 1.6; }
+        h1, h2, h3 { font-weight: 700; }
+        a { text-decoration: none; color: inherit; }
 
         /* --- NAVBAR --- */
-        header {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(5px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--green-acre);
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--revere-green);
-        }
-
-        .btn-cta-nav {
-            background-color: var(--green-acre);
-            color: var(--text-light);
-            padding: 0.5rem 1.2rem;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-
-        .btn-cta-nav:hover {
-            background-color: var(--revere-green);
-        }
+        header { position: fixed; width: 100%; top: 0; background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; transition: all 0.3s ease; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; max-width: 1200px; margin: 0 auto; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--green-acre); }
+        .nav-links { list-style: none; display: flex; gap: 2rem; }
+        .nav-links a { font-weight: 600; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--revere-green); }
+        .btn-cta-nav { background-color: var(--green-acre); color: var(--text-light); padding: 0.5rem 1.2rem; border-radius: 25px; font-weight: 600; transition: background 0.3s; }
+        .btn-cta-nav:hover { background-color: var(--revere-green); }
 
         /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(44, 62, 31, 0.5), rgba(44, 62, 31, 0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 5%;
-            margin-top: 60px; /* Offset for navbar */
-        }
+        .hero { height: 100vh; background: linear-gradient(rgba(44, 62, 31, 0.5), rgba(44, 62, 31, 0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 5%; margin-top: 60px; }
+        .hero-content { max-width: 800px; color: var(--text-light); }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; font-weight: 300; }
+        .btn-main { background-color: var(--green-acre); color: var(--text-light); padding: 1rem 2.5rem; font-size: 1.1rem; border-radius: 30px; font-weight: 700; display: inline-block; transition: transform 0.3s, background 0.3s; box-shadow: 0 4px 15px rgba(107, 127, 84, 0.4); }
+        .btn-main:hover { transform: translateY(-3px); background-color: var(--revere-green); }
 
-        .hero-content {
-            max-width: 800px;
-            color: var(--text-light);
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-
-        .btn-main {
-            background-color: var(--green-acre);
-            color: var(--text-light);
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
-            border-radius: 30px;
-            font-weight: 700;
-            display: inline-block;
-            transition: transform 0.3s, background 0.3s;
-            box-shadow: 0 4px 15px rgba(107, 127, 84, 0.4);
-        }
-
-        .btn-main:hover {
-            transform: translateY(-3px);
-            background-color: var(--revere-green);
-        }
-
-        /* --- FEATURES (Atributos del proyecto) --- */
-        .features {
-            padding: 5rem 5%;
-            background-color: var(--text-light);
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            color: var(--green-acre);
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            width: 60px;
-            height: 3px;
-            background-color: var(--grazing-field);
-            display: block;
-            margin: 10px auto 0;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .feature-item {
-            padding: 2rem;
-            background-color: var(--bg-offwhite);
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-            border-bottom: 4px solid var(--bermuda-grass);
-        }
-
-        .feature-item:hover {
-            transform: translateY(-5px);
-            border-bottom-color: var(--green-acre);
-        }
-
-        .feature-item i {
-            font-size: 2.5rem;
-            color: var(--green-acre);
-            margin-bottom: 1rem;
-        }
+        /* --- FEATURES --- */
+        .features { padding: 5rem 5%; background-color: var(--text-light); text-align: center; }
+        .section-title { font-size: 2.2rem; color: var(--green-acre); margin-bottom: 3rem; position: relative; }
+        .section-title::after { content: ''; width: 60px; height: 3px; background-color: var(--grazing-field); display: block; margin: 10px auto 0; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .feature-item { padding: 2rem; background-color: var(--bg-offwhite); border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.3s; border-bottom: 4px solid var(--bermuda-grass); }
+        .feature-item:hover { transform: translateY(-5px); border-bottom-color: var(--green-acre); }
+        .feature-item i { font-size: 2.5rem; color: var(--green-acre); margin-bottom: 1rem; }
 
         /* --- MASTERPLAN SECTION --- */
-        .masterplan {
-            padding: 5rem 5%;
-            background-color: var(--bermuda-grass); /* Fondo suave de la paleta */
-            text-align: center;
-        }
-
-        .masterplan-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: var(--text-light);
-            padding: 1rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .masterplan-img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            display: block;
-        }
-
-        .masterplan-info {
-            margin-top: 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .status-dot {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-right: 8px;
-        }
-        .status-disponible { background-color: var(--green-acre); }
-        .status-reservado { background-color: #f1c40f; }
-        .status-vendido { background-color: #e74c3c; }
+        .masterplan { padding: 5rem 5%; background-color: var(--bermuda-grass); text-align: center; }
+        .masterplan-wrapper { max-width: 1200px; margin: 0 auto; background: var(--text-light); border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; /* Mantiene bordes redondeados con el iframe adentro */ }
+        .masterplan-iframe { width: 100%; height: 75vh; min-height: 500px; border: none; display: block; }
 
         /* --- LOCATION / ENTORNO --- */
-        .location {
-            padding: 5rem 5%;
-            background-color: var(--text-light);
-        }
-
-        .location-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            align-items: center;
-        }
-
-        .location-text ul {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-
-        .location-text li {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            font-weight: 600;
-        }
-
-        .location-text i {
-            color: var(--revere-green);
-            margin-right: 15px;
-            font-size: 1.2rem;
-        }
+        .location { padding: 5rem 5%; background-color: var(--text-light); }
+        .location-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto; align-items: center; }
+        .location-text ul { list-style: none; margin-top: 1.5rem; }
+        .location-text li { margin-bottom: 1rem; display: flex; align-items: center; font-weight: 600; }
+        .location-text i { color: var(--revere-green); margin-right: 15px; font-size: 1.2rem; }
 
         /* --- CONTACT SECTION --- */
-        .contact {
-            padding: 5rem 5%;
-            background-color: var(--bg-offwhite);
-        }
+        .contact { padding: 5rem 5%; background-color: var(--bg-offwhite); }
+        .contact-container { max-width: 600px; margin: 0 auto; background: var(--text-light); padding: 3rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-top: 5px solid var(--green-acre); }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark); }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px 15px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit; font-size: 1rem; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--revere-green); box-shadow: 0 0 5px rgba(152, 175, 134, 0.5); }
+        .btn-submit { width: 100%; background-color: var(--green-acre); color: var(--text-light); border: none; padding: 1rem; font-size: 1.1rem; font-weight: 700; border-radius: 5px; cursor: pointer; transition: background 0.3s; }
+        .btn-submit:hover { background-color: var(--text-dark); }
 
-        .contact-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: var(--text-light);
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            border-top: 5px solid var(--green-acre);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .form-group input, 
-        .form-group textarea {
-            width: 100%;
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
-            font-size: 1rem;
-        }
-
-        .form-group input:focus, 
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--revere-green);
-            box-shadow: 0 0 5px rgba(152, 175, 134, 0.5);
-        }
-
-        .btn-submit {
-            width: 100%;
-            background-color: var(--green-acre);
-            color: var(--text-light);
-            border: none;
-            padding: 1rem;
-            font-size: 1.1rem;
-            font-weight: 700;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .btn-submit:hover {
-            background-color: var(--text-dark);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background-color: var(--text-dark);
-            color: var(--text-light);
-            text-align: center;
-            padding: 2rem 5%;
-        }
-
-        /* --- WHATSAPP FLOAT --- */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
+        /* --- FOOTER & WSP --- */
+        footer { background-color: var(--text-dark); color: var(--text-light); text-align: center; padding: 2rem 5%; }
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 100; display: flex; align-items: center; justify-content: center; transition: transform 0.3s; }
+        .whatsapp-float:hover { transform: scale(1.1); }
 
         /* --- MEDIA QUERIES --- */
         @media (max-width: 768px) {
-            .nav-links { display: none; /* Simplificación para móvil */ }
+            .nav-links { display: none; }
             .hero-content h1 { font-size: 2.5rem; }
             .location-content { grid-template-columns: 1fr; }
+            .masterplan-iframe { height: 60vh; min-height: 400px; } /* Ajuste de aspecto para móviles */
+            .contact-container { padding: 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVBAR -->
     <header id="header">
         <nav class="navbar">
             <div class="logo">Los Tres Maitenes</div>
@@ -392,16 +108,14 @@
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
     <section id="hero" class="hero">
         <div class="hero-content">
             <h1>Parcelas Los Tres Maitenes</h1>
             <p>Descubre tu refugio perfecto en Fresia, Región de Los Lagos. Parcelas de 5000 m² rodeadas de naturaleza nativa, paz y alta plusvalía.</p>
-            <a href="#masterplan" class="btn-main">Ver Masterplan</a>
+            <a href="#masterplan" class="btn-main">Ver Masterplan interactivo</a>
         </div>
     </section>
 
-    <!-- CARACTERÍSTICAS -->
     <section id="caracteristicas" class="features">
         <h2 class="section-title">El Proyecto</h2>
         <div class="features-grid">
@@ -428,20 +142,14 @@
         </div>
     </section>
 
-    <!-- MASTERPLAN (Centro de la página) -->
+    <!-- MASTERPLAN -->
     <section id="masterplan" class="masterplan">
-        <h2 class="section-title" style="color: var(--text-dark);">Masterplan</h2>
-        <p style="margin-bottom: 2rem; color: var(--text-dark);">Explora la distribución de nuestras parcelas. Elige la topografía y ubicación que mejor se adapte a tu proyecto de vida.</p>
+        <h2 class="section-title" style="color: var(--text-dark);">Masterplan 360°</h2>
+        <p style="margin-bottom: 2rem; color: var(--text-dark);">Explora nuestro recorrido interactivo y conoce la disponibilidad en tiempo real.</p>
         
-        <div class="masterplan-container">
-            <!-- REEMPLAZAR SRC POR LA IMAGEN REAL DEL MASTERPLAN -->
-            <img src="https://via.placeholder.com/1000x600/f7f9f5/6b7f54?text=Mapa+Masterplan+Los+Tres+Maitenes+(Reemplazar+por+imagen+real)" alt="Masterplan Parcelas Los Tres Maitenes" class="masterplan-img">
-            
-            <div class="masterplan-info">
-                <span><span class="status-dot status-disponible"></span> Disponible</span>
-                <span><span class="status-dot status-reservado"></span> Reservado</span>
-                <span><span class="status-dot status-vendido"></span> Vendido</span>
-            </div>
+        <div class="masterplan-wrapper">
+            <!-- Iframe embebido escalable y responsive -->
+            <iframe class="masterplan-iframe" src="https://ilycons.github.io/fresia360/" title="Masterplan Los Tres Maitenes 360" allowfullscreen></iframe>
         </div>
     </section>
 
@@ -450,7 +158,7 @@
         <div class="location-content">
             <div class="location-text">
                 <h2 class="section-title" style="text-align: left; margin-left: 0;">Ubicación Privilegiada</h2>
-                <p>Ubicado estratégicamente en la comuna de Fresia, Los Tres Maitenes te ofrece la tranquilidad del campo sureño sin alejarte de los servicios esenciales y polos turísticos de la Región de Los Lagos.</p>
+                <p>Ubicado estratégicamente en la comuna de Fresia, Los Tres Maitenes te ofrece la tranquilidad del campo sureño sin alejarte de los servicios esenciales.</p>
                 <ul>
                     <li><i class="fa-solid fa-car"></i> A minutos del centro de Fresia.</li>
                     <li><i class="fa-solid fa-plane"></i> Excelente conectividad hacia el Aeropuerto El Tepual.</li>
@@ -459,8 +167,8 @@
                 </ul>
             </div>
             <div class="location-map">
-                <!-- IFRAME DE GOOGLE MAPS (Ajustar a ubicación real de Fresia/Proyecto) -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d189733.9189916616!2d-73.5414800547783!3d-41.134543599187315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9617d91d987d6051%3A0xc3f1ce4d2217c917!2sFresia%2C%20Los%20Lagos!5e0!3m2!1ses!2scl!4v1680000000000!5m2!1ses!2scl" width="100%" height="400" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- IFRAME GOOGLE MAPS - Coordenadas exactas -->
+                <iframe src="https://maps.google.com/maps?q=-41.22583035619617,-73.3173470901525&hl=es&z=15&output=embed" width="100%" height="400" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -469,42 +177,44 @@
     <section id="contacto" class="contact">
         <h2 class="section-title">Inicia tu Proyecto</h2>
         <div class="contact-container">
-            <form id="leadForm">
+            <!-- Formulario apuntando a FormSubmit (Se envían los correos a tu email de forma transparente) -->
+            <form id="leadForm" action="https://formsubmit.co/perito.vidal@gmail.com" method="POST">
+                
+                <!-- Configuraciones de FormSubmit ocultas -->
+                <input type="hidden" name="_subject" value="¡Nuevo Lead - Proyecto Los Tres Maitenes!">
+                <input type="hidden" name="_captcha" value="false">
+                
                 <div class="form-group">
                     <label for="nombre">Nombre Completo</label>
-                    <input type="text" id="nombre" required placeholder="Ej: Juan Pérez">
+                    <input type="text" id="nombre" name="Nombre" required placeholder="Ej: Juan Pérez">
                 </div>
                 <div class="form-group">
                     <label for="telefono">Teléfono</label>
-                    <input type="tel" id="telefono" required placeholder="+56 9 1234 5678">
+                    <input type="tel" id="telefono" name="Telefono" required placeholder="+56 9 1234 5678">
                 </div>
                 <div class="form-group">
                     <label for="email">Correo Electrónico</label>
-                    <input type="email" id="email" required placeholder="juan@correo.com">
+                    <input type="email" id="email" name="Email" required placeholder="juan@correo.com">
                 </div>
                 <div class="form-group">
                     <label for="mensaje">¿Qué parcela te interesa?</label>
-                    <textarea id="mensaje" rows="4" placeholder="Me gustaría recibir el brochure y conocer los valores..."></textarea>
+                    <textarea id="mensaje" name="Mensaje" rows="4" placeholder="Me gustaría recibir el brochure y conocer los valores..."></textarea>
                 </div>
                 <button type="submit" class="btn-submit">Solicitar Información</button>
             </form>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Proyecto Parcelas Los Tres Maitenes - Fresia, Los Lagos. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Proyecto Parcelas Los Tres Maitenes. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- WHATSAPP WIDGET -->
-    <!-- Reemplazar el número en el enlace por el teléfono de ventas -->
     <a href="https://wa.me/56900000000?text=Hola,%20me%20interesa%20el%20proyecto%20Los%20Tres%20Maitenes" class="whatsapp-float" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- SCRIPTS -->
     <script>
-        // Lógica sencilla para cambiar el estilo del navbar al hacer scroll
+        // Transición del header al hacer scroll
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -516,25 +226,43 @@
             }
         });
 
-        // Intercepción del formulario para demostración
+        // Intercepción del Formulario con Fetch para no redirigir al usuario (AJAX)
         document.getElementById('leadForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const btn = this.querySelector('.btn-submit');
+            const form = this;
+            const btn = form.querySelector('.btn-submit');
             const originalText = btn.innerText;
             
-            btn.innerText = 'Enviando...';
+            btn.innerText = 'Enviando petición...';
             btn.style.backgroundColor = 'var(--revere-green)';
             
-            // Simular petición asíncrona
-            setTimeout(() => {
-                btn.innerText = '¡Mensaje Enviado!';
-                btn.style.backgroundColor = 'var(--green-acre)';
-                this.reset();
-                
+            fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    btn.innerText = '¡Cotización Enviada!';
+                    btn.style.backgroundColor = 'var(--green-acre)';
+                    form.reset();
+                } else {
+                    btn.innerText = 'Error al enviar, intenta nuevamente';
+                    btn.style.backgroundColor = '#e74c3c';
+                }
                 setTimeout(() => {
                     btn.innerText = originalText;
-                }, 3000);
-            }, 1500);
+                    btn.style.backgroundColor = 'var(--green-acre)';
+                }, 4000);
+            }).catch(error => {
+                btn.innerText = 'Error de conexión';
+                btn.style.backgroundColor = '#e74c3c';
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.backgroundColor = 'var(--green-acre)';
+                }, 4000);
+            });
         });
     </script>
 </body>
