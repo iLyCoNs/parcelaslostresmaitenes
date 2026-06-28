@@ -21,11 +21,13 @@
             --text-dark: #2C3E1F;
             --text-light: #FFFFFF;
             --bg-offwhite: #F7F9F5;
+            --premium-dark: #1b2613; /* Nuevo tono oscuro para el lujo */
+            --accent-gold: #d4af37; /* Acento sutil para el lujo */
         }
 
         /* --- RESET & BASIC STYLES --- */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
-        body { color: var(--text-dark); background-color: var(--bg-offwhite); line-height: 1.6; }
+        body { color: var(--text-dark); background-color: var(--bg-offwhite); line-height: 1.6; overflow-x: hidden; }
         h1, h2, h3 { font-weight: 700; }
         a { text-decoration: none; color: inherit; }
 
@@ -56,10 +58,35 @@
         .feature-item:hover { transform: translateY(-5px); border-bottom-color: var(--green-acre); }
         .feature-item i { font-size: 2.5rem; color: var(--green-acre); margin-bottom: 1rem; }
 
-        /* --- MASTERPLAN SECTION --- */
-        .masterplan { padding: 5rem 5%; background-color: var(--bermuda-grass); text-align: center; }
-        .masterplan-wrapper { max-width: 1200px; margin: 0 auto; background: var(--text-light); border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; /* Mantiene bordes redondeados con el iframe adentro */ }
-        .masterplan-iframe { width: 100%; height: 75vh; min-height: 500px; border: none; display: block; }
+        /* --- GALLERY PREMIUM --- */
+        .gallery { padding: 5rem 5%; background-color: var(--bg-offwhite); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 250px; gap: 15px; max-width: 1200px; margin: 0 auto; }
+        .gallery-item { width: 100%; height: 100%; overflow: hidden; border-radius: 10px; position: relative; cursor: pointer; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; filter: brightness(0.85); }
+        .gallery-item:hover img { transform: scale(1.1); filter: brightness(1.1); }
+        /* Grid Layout Asimétrico para look más pro */
+        .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+        .gallery-item:nth-child(4) { grid-column: span 2; }
+        .gallery-item:nth-child(8) { grid-column: span 2; }
+
+        /* --- MASTERPLAN PREMIUM --- */
+        .masterplan { padding: 6rem 5%; background: linear-gradient(135deg, var(--premium-dark) 0%, var(--text-dark) 100%); text-align: center; position: relative; }
+        .masterplan .section-title { color: var(--accent-gold); }
+        .masterplan .section-title::after { background-color: var(--accent-gold); opacity: 0.5; }
+        .masterplan p { color: var(--bermuda-grass); margin-bottom: 3rem; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        
+        .masterplan-wrapper { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            background: rgba(255, 255, 255, 0.05); /* Efecto Glass */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px; 
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5); 
+            padding: 15px;
+            overflow: hidden; 
+        }
+        .masterplan-iframe { width: 100%; height: 75vh; min-height: 550px; border-radius: 12px; border: none; display: block; }
 
         /* --- LOCATION / ENTORNO --- */
         .location { padding: 5rem 5%; background-color: var(--text-light); }
@@ -67,6 +94,7 @@
         .location-text ul { list-style: none; margin-top: 1.5rem; }
         .location-text li { margin-bottom: 1rem; display: flex; align-items: center; font-weight: 600; }
         .location-text i { color: var(--revere-green); margin-right: 15px; font-size: 1.2rem; }
+        .location-map iframe { border: 0; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 
         /* --- CONTACT SECTION --- */
         .contact { padding: 5rem 5%; background-color: var(--bg-offwhite); }
@@ -79,16 +107,22 @@
         .btn-submit:hover { background-color: var(--text-dark); }
 
         /* --- FOOTER & WSP --- */
-        footer { background-color: var(--text-dark); color: var(--text-light); text-align: center; padding: 2rem 5%; }
-        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 100; display: flex; align-items: center; justify-content: center; transition: transform 0.3s; }
+        footer { background-color: var(--premium-dark); color: var(--text-light); text-align: center; padding: 2rem 5%; }
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px rgba(0,0,0,0.3); z-index: 100; display: flex; align-items: center; justify-content: center; transition: transform 0.3s; }
         .whatsapp-float:hover { transform: scale(1.1); }
 
         /* --- MEDIA QUERIES --- */
+        @media (max-width: 992px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-item:nth-child(1), .gallery-item:nth-child(4), .gallery-item:nth-child(8) { grid-column: span 1; }
+            .gallery-item:nth-child(1) { grid-row: span 1; }
+        }
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hero-content h1 { font-size: 2.5rem; }
             .location-content { grid-template-columns: 1fr; }
-            .masterplan-iframe { height: 60vh; min-height: 400px; } /* Ajuste de aspecto para móviles */
+            .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 200px; }
+            .masterplan-iframe { height: 60vh; min-height: 400px; }
             .contact-container { padding: 2rem; }
         }
     </style>
@@ -100,7 +134,7 @@
             <div class="logo">Los Tres Maitenes</div>
             <ul class="nav-links">
                 <li><a href="#hero">Inicio</a></li>
-                <li><a href="#caracteristicas">Atributos</a></li>
+                <li><a href="#galeria">Galería</a></li>
                 <li><a href="#masterplan">Masterplan</a></li>
                 <li><a href="#entorno">Entorno</a></li>
             </ul>
@@ -112,7 +146,7 @@
         <div class="hero-content">
             <h1>Parcelas Los Tres Maitenes</h1>
             <p>Descubre tu refugio perfecto en Fresia, Región de Los Lagos. Parcelas de 5000 m² rodeadas de naturaleza nativa, paz y alta plusvalía.</p>
-            <a href="#masterplan" class="btn-main">Ver Masterplan interactivo</a>
+            <a href="#galeria" class="btn-main">Descubrir el Proyecto</a>
         </div>
     </section>
 
@@ -142,13 +176,28 @@
         </div>
     </section>
 
-    <!-- MASTERPLAN -->
+    <!-- GALERÍA PREMIUM -->
+    <section id="galeria" class="gallery">
+        <h2 class="section-title" style="text-align: center;">Visualiza tu Futuro</h2>
+        <div class="gallery-grid">
+            <!-- NOTA: Reemplazar estas imágenes de Unsplash por fotos reales del terreno -->
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1542272201-b1ca555f8505?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Vista del bosque"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1516214104703-d2507c614b15?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Naturaleza"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Paisaje verde"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1505504104278-ebf995806e2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Flora nativa"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Camino estabilizado"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1444858291040-58f47d47333e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pradera"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1437422061949-f6efbdea0017?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Luz del atardecer"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1455216377755-667746146fc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Vista amplia"></div>
+        </div>
+    </section>
+
+    <!-- MASTERPLAN PREMIUM -->
     <section id="masterplan" class="masterplan">
-        <h2 class="section-title" style="color: var(--text-dark);">Masterplan 360°</h2>
-        <p style="margin-bottom: 2rem; color: var(--text-dark);">Explora nuestro recorrido interactivo y conoce la disponibilidad en tiempo real.</p>
+        <h2 class="section-title">Masterplan 360°</h2>
+        <p>Explora nuestro recorrido interactivo de clase mundial. Desliza, haz zoom y conoce la disponibilidad y topografía de tu próxima inversión en tiempo real.</p>
         
         <div class="masterplan-wrapper">
-            <!-- Iframe embebido escalable y responsive -->
             <iframe class="masterplan-iframe" src="https://ilycons.github.io/fresia360/" title="Masterplan Los Tres Maitenes 360" allowfullscreen></iframe>
         </div>
     </section>
@@ -167,20 +216,17 @@
                 </ul>
             </div>
             <div class="location-map">
-                <!-- IFRAME GOOGLE MAPS - Coordenadas exactas -->
-                <iframe src="https://maps.google.com/maps?q=-41.22583035619617,-73.3173470901525&hl=es&z=15&output=embed" width="100%" height="400" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- IFRAME GOOGLE MAPS - Parámetro &t=h añadido para Vista Satélite/Híbrida -->
+                <iframe src="https://maps.google.com/maps?q=-41.22583035619617,-73.3173470901525&hl=es&z=15&t=h&output=embed" width="100%" height="400" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
 
     <!-- CONTACT FORM -->
     <section id="contacto" class="contact">
-        <h2 class="section-title">Inicia tu Proyecto</h2>
+        <h2 class="section-title" style="text-align: center;">Inicia tu Proyecto</h2>
         <div class="contact-container">
-            <!-- Formulario apuntando a FormSubmit (Se envían los correos a tu email de forma transparente) -->
             <form id="leadForm" action="https://formsubmit.co/perito.vidal@gmail.com" method="POST">
-                
-                <!-- Configuraciones de FormSubmit ocultas -->
                 <input type="hidden" name="_subject" value="¡Nuevo Lead - Proyecto Los Tres Maitenes!">
                 <input type="hidden" name="_captcha" value="false">
                 
@@ -226,7 +272,7 @@
             }
         });
 
-        // Intercepción del Formulario con Fetch para no redirigir al usuario (AJAX)
+        // Fetch API para el formulario
         document.getElementById('leadForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const form = this;
