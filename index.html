@@ -6,9 +6,7 @@
     <title>Parcelas Los Tres Maitenes | Fresia, Los Lagos</title>
     <meta name="description" content="Venta de parcelas en Los Tres Maitenes, comuna de Fresia. Naturaleza, tranquilidad y alta plusvalía en la Región de Los Lagos.">
     
-    <!-- Google Fonts: Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -33,9 +31,13 @@
 
         /* --- NAVBAR --- */
         header { position: fixed; width: 100%; top: 0; background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; transition: all 0.3s ease; }
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; max-width: 1200px; margin: 0 auto; }
-        .logo { font-size: 1.5rem; font-weight: 700; color: var(--green-acre); }
-        .nav-links { list-style: none; display: flex; gap: 2rem; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 5%; max-width: 1200px; margin: 0 auto; }
+        
+        /* Contenedor del Logo de la Cabecera */
+        .logo { display: flex; align-items: center; }
+        .logo img { max-height: 55px; width: auto; display: block; }
+
+        .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
         .nav-links a { font-weight: 600; transition: color 0.3s; }
         .nav-links a:hover { color: var(--revere-green); }
         .btn-cta-nav { background-color: var(--green-acre); color: var(--text-light); padding: 0.5rem 1.2rem; border-radius: 25px; font-weight: 600; transition: background 0.3s; }
@@ -68,7 +70,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* Filtro blur eliminado. Solo oscurecimiento sutil para contraste del texto */
             background: linear-gradient(135deg, rgba(27, 38, 19, 0.4) 0%, rgba(44, 62, 31, 0.2) 100%);
             z-index: 2;
         }
@@ -81,7 +82,7 @@
         .hero-content h1 { 
             font-size: 3.8rem; 
             margin-bottom: 1.2rem; 
-            text-shadow: 0 4px 12px rgba(0,0,0,0.5); /* Sombra aumentada para separar letras del fondo nítido */
+            text-shadow: 0 4px 12px rgba(0,0,0,0.5); 
             letter-spacing: -1px;
         }
         .hero-content p { 
@@ -150,8 +151,14 @@
         .btn-submit { width: 100%; background-color: var(--green-acre); color: var(--text-light); border: none; padding: 1rem; font-size: 1.1rem; font-weight: 700; border-radius: 5px; cursor: pointer; transition: background 0.3s; }
         .btn-submit:hover { background-color: var(--text-dark); }
 
-        /* --- FOOTER & WSP --- */
-        footer { background-color: var(--premium-dark); color: var(--text-light); text-align: center; padding: 2rem 5%; }
+        /* --- FOOTER PREMIUM WITH LOGO --- */
+        footer { background-color: var(--premium-dark); color: var(--text-light); padding: 3rem 5% 2rem 5%; text-align: center; }
+        .footer-content { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
+        .footer-logo { max-height: 70px; width: auto; display: block; }
+        .footer-divider { width: 100%; max-width: 200px; height: 1px; background-color: rgba(208, 224, 196, 0.2); margin: 0.5rem 0; }
+        footer p { font-size: 0.9rem; font-weight: 300; opacity: 0.8; }
+
+        /* --- WHATSAPP FLOAT --- */
         .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px rgba(0,0,0,0.3); z-index: 100; display: flex; align-items: center; justify-content: center; transition: transform 0.3s; }
         .whatsapp-float:hover { transform: scale(1.1); }
 
@@ -164,12 +171,15 @@
         }
         @media (max-width: 768px) {
             .nav-links { display: none; }
+            .navbar { padding: 0.8rem 5%; }
+            .logo img { max-height: 45px; }
             .hero-content h1 { font-size: 2.4rem; }
             .hero-content p { font-size: 1.1rem; }
             .location-content { grid-template-columns: 1fr; }
             .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 220px; gap: 15px; }
             .masterplan-iframe { height: 60vh; min-height: 400px; }
             .contact-container { padding: 2rem; }
+            .footer-logo { max-height: 55px; }
         }
     </style>
 </head>
@@ -177,7 +187,9 @@
 
     <header id="header">
         <nav class="navbar">
-            <div class="logo">Los Tres Maitenes</div>
+            <div class="logo">
+                <img src="https://raw.githubusercontent.com/iLyCoNs/parcelaslostresmaitenes/refs/heads/main/logo.png" alt="Logo Parcelas Los Tres Maitenes">
+            </div>
             <ul class="nav-links">
                 <li><a href="#hero">Inicio</a></li>
                 <li><a href="#galeria">Galería</a></li>
@@ -259,7 +271,7 @@
                     <li><i class="fa-solid fa-car"></i> A minutos del centro de Fresia.</li>
                     <li><i class="fa-solid fa-plane"></i> Excelente conectividad hacia el Aeropuerto El Tepual.</li>
                     <li><i class="fa-solid fa-tree"></i> Entorno de bosque nativo y praderas.</li>
-                    <li><i class="fa-solid fa-route"></i> Fácil acceso a Puerto Varas y Frutillar.</li>
+                    <li><i class="fa-solid fa-route"></i> Fácil acceso a Puerto Varas and Frutillar.</li>
                 </ul>
             </div>
             <div class="location-map">
@@ -299,7 +311,11 @@
     </section>
 
     <footer>
-        <p>© 2026 Proyecto Parcelas Los Tres Maitenes. Todos los derechos reservados.</p>
+        <div class="footer-content">
+            <img src="https://raw.githubusercontent.com/iLyCoNs/parcelaslostresmaitenes/refs/heads/main/logo.png" alt="Logo Completo Los Tres Maitenes" class="footer-logo">
+            <div class="footer-divider"></div>
+            <p>© 2026 Proyecto Parcelas Los Tres Maitenes. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
     <a href="https://wa.me/56900000000?text=Hola,%20me%20interesa%20el%20proyecto%20Los%20Tres%20Maitenes" class="whatsapp-float" target="_blank">
