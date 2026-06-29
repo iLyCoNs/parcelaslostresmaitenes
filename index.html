@@ -6,7 +6,9 @@
     <title>Parcelas Los Tres Maitenes | Fresia, Los Lagos</title>
     <meta name="description" content="Venta de parcelas en Los Tres Maitenes, comuna de Fresia. Naturaleza, tranquilidad y alta plusvalía en la Región de Los Lagos.">
     
+    <!-- Google Fonts: Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -32,11 +34,8 @@
         /* --- NAVBAR --- */
         header { position: fixed; width: 100%; top: 0; background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; transition: all 0.3s ease; }
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 5%; max-width: 1200px; margin: 0 auto; }
-        
-        /* Contenedor del Logo de la Cabecera */
         .logo { display: flex; align-items: center; }
         .logo img { max-height: 55px; width: auto; display: block; }
-
         .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
         .nav-links a { font-weight: 600; transition: color 0.3s; }
         .nav-links a:hover { color: var(--revere-green); }
@@ -46,13 +45,12 @@
         /* --- HERO VIDEO SECTION --- */
         .hero { 
             position: relative;
-            height: 100vh; 
+            min-height: 100vh; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
             text-align: center; 
-            padding: 0 5%; 
-            margin-top: 60px; 
+            padding: 100px 5% 50px 5%; 
             overflow: hidden;
         }
         .hero-video {
@@ -70,7 +68,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(27, 38, 19, 0.4) 0%, rgba(44, 62, 31, 0.2) 100%);
+            background: linear-gradient(135deg, rgba(27, 38, 19, 0.5) 0%, rgba(44, 62, 31, 0.3) 100%);
             z-index: 2;
         }
         .hero-content { 
@@ -78,19 +76,82 @@
             max-width: 850px; 
             color: var(--text-light); 
             z-index: 3;
+            width: 100%;
         }
         .hero-content h1 { 
-            font-size: 3.8rem; 
-            margin-bottom: 1.2rem; 
+            font-size: 3.5rem; 
+            margin-bottom: 1rem; 
             text-shadow: 0 4px 12px rgba(0,0,0,0.5); 
             letter-spacing: -1px;
         }
-        .hero-content p { 
-            font-size: 1.3rem; 
-            margin-bottom: 2.5rem; 
+        .hero-content > p { 
+            font-size: 1.2rem; 
+            margin-bottom: 2rem; 
             font-weight: 300;
             text-shadow: 0 2px 8px rgba(0,0,0,0.6);
         }
+
+        /* --- NUEVO: PRICING CARD HERO --- */
+        .hero-pricing {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 0 auto 2.5rem auto;
+            max-width: 650px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-gold);
+            color: var(--premium-dark);
+            padding: 5px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .pricing-title {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        .pricing-options {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .price-box {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .price-label {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+        .price-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+        .price-divider {
+            width: 1px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.4);
+        }
+
         .btn-main { background-color: var(--green-acre); color: var(--text-light); padding: 1rem 2.5rem; font-size: 1.1rem; border-radius: 30px; font-weight: 700; display: inline-block; transition: transform 0.3s, background 0.3s; box-shadow: 0 4px 15px rgba(107, 127, 84, 0.4); }
         .btn-main:hover { transform: translateY(-3px); background-color: var(--revere-green); }
 
@@ -109,7 +170,6 @@
         .gallery-item { width: 100%; height: 100%; overflow: hidden; border-radius: 12px; position: relative; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); filter: brightness(0.9); }
         .gallery-item:hover img { transform: scale(1.08); filter: brightness(1.05); }
-        
         .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
         .gallery-item:nth-child(4) { grid-column: span 2; }
         .gallery-item:nth-child(7) { grid-column: span 2; }
@@ -119,18 +179,7 @@
         .masterplan .section-title { color: var(--accent-gold); }
         .masterplan .section-title::after { background-color: var(--accent-gold); opacity: 0.5; }
         .masterplan p { color: var(--bermuda-grass); margin-bottom: 3rem; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
-        
-        .masterplan-wrapper { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            background: rgba(255, 255, 255, 0.05); 
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px; 
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5); 
-            padding: 15px;
-            overflow: hidden; 
-        }
+        .masterplan-wrapper { max-width: 1200px; margin: 0 auto; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; box-shadow: 0 25px 50px rgba(0,0,0,0.5); padding: 15px; overflow: hidden; }
         .masterplan-iframe { width: 100%; height: 75vh; min-height: 550px; border-radius: 12px; border: none; display: block; }
 
         /* --- LOCATION / ENTORNO --- */
@@ -151,7 +200,7 @@
         .btn-submit { width: 100%; background-color: var(--green-acre); color: var(--text-light); border: none; padding: 1rem; font-size: 1.1rem; font-weight: 700; border-radius: 5px; cursor: pointer; transition: background 0.3s; }
         .btn-submit:hover { background-color: var(--text-dark); }
 
-        /* --- FOOTER PREMIUM WITH LOGO --- */
+        /* --- FOOTER PREMIUM CON LOGO --- */
         footer { background-color: var(--premium-dark); color: var(--text-light); padding: 3rem 5% 2rem 5%; text-align: center; }
         .footer-content { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
         .footer-logo { max-height: 70px; width: auto; display: block; }
@@ -173,8 +222,15 @@
             .nav-links { display: none; }
             .navbar { padding: 0.8rem 5%; }
             .logo img { max-height: 45px; }
-            .hero-content h1 { font-size: 2.4rem; }
-            .hero-content p { font-size: 1.1rem; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-content > p { font-size: 1.1rem; }
+            
+            /* Ajustes Pricing Card Mobile */
+            .hero-pricing { padding: 1.5rem 1rem; margin-bottom: 2rem; }
+            .pricing-options { flex-direction: column; gap: 1rem; }
+            .price-divider { width: 80%; height: 1px; }
+            .price-value { font-size: 1.8rem; }
+
             .location-content { grid-template-columns: 1fr; }
             .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 220px; gap: 15px; }
             .masterplan-iframe { height: 60vh; min-height: 400px; }
@@ -208,8 +264,26 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Parcelas Los Tres Maitenes</h1>
-            <p>Descubre tu refugio perfecto en Fresia, Región de Los Lagos. Parcelas de 5000 m² rodeadas de naturaleza nativa, paz y alta plusvalía.</p>
-            <a href="#galeria" class="btn-main">Descubrir el Proyecto</a>
+            <p>Descubre tu refugio perfecto en Fresia, Región de Los Lagos. Parcelas de 5000 m² rodeadas de naturaleza nativa.</p>
+            
+            <!-- TARJETA DE PRECIOS INTEGRADA (Según captura de requerimientos) -->
+            <div class="hero-pricing">
+                <span class="pricing-badge">Valor Único</span>
+                <p class="pricing-title">Todas las parcelas al mismo precio. ¡Elige tu ubicación favorita!</p>
+                <div class="pricing-options">
+                    <div class="price-box">
+                        <span class="price-label">Terreno Base</span>
+                        <span class="price-value">$49.000.000</span>
+                    </div>
+                    <div class="price-divider"></div>
+                    <div class="price-box">
+                        <span class="price-label">Con Tiny House</span>
+                        <span class="price-value">$68.000.000</span>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#masterplan" class="btn-main">Ver Disponibilidad</a>
         </div>
     </section>
 
@@ -255,7 +329,7 @@
 
     <section id="masterplan" class="masterplan">
         <h2 class="section-title">Masterplan 360°</h2>
-        <p>Explora nuestro recorrido interactivo de clase mundial. Desliza, haz zoom y conoce la disponibilidad y topografía de tu próxima inversión en tiempo real.</p>
+        <p>Explora nuestro recorrido interactivo de clase mundial. Desliza, haz zoom y conoce la topografía de tu próxima inversión en tiempo real.</p>
         
         <div class="masterplan-wrapper">
             <iframe class="masterplan-iframe" src="https://ilycons.github.io/fresia360/" title="Masterplan Los Tres Maitenes 360" allowfullscreen></iframe>
@@ -271,7 +345,7 @@
                     <li><i class="fa-solid fa-car"></i> A minutos del centro de Fresia.</li>
                     <li><i class="fa-solid fa-plane"></i> Excelente conectividad hacia el Aeropuerto El Tepual.</li>
                     <li><i class="fa-solid fa-tree"></i> Entorno de bosque nativo y praderas.</li>
-                    <li><i class="fa-solid fa-route"></i> Fácil acceso a Puerto Varas and Frutillar.</li>
+                    <li><i class="fa-solid fa-route"></i> Fácil acceso a Puerto Varas y Frutillar.</li>
                 </ul>
             </div>
             <div class="location-map">
