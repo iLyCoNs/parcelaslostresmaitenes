@@ -39,11 +39,56 @@
         .btn-cta-nav { background-color: var(--green-acre); color: var(--text-light); padding: 0.5rem 1.2rem; border-radius: 25px; font-weight: 600; transition: background 0.3s; }
         .btn-cta-nav:hover { background-color: var(--revere-green); }
 
-        /* --- HERO SECTION --- */
-        .hero { height: 100vh; background: linear-gradient(rgba(44, 62, 31, 0.5), rgba(44, 62, 31, 0.5)), url('https://picsum.photos/1920/1080?random=20') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 5%; margin-top: 60px; }
-        .hero-content { max-width: 800px; color: var(--text-light); }
-        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; font-weight: 300; }
+        /* --- HERO VIDEO SECTION (Premium macOS Style) --- */
+        .hero { 
+            position: relative;
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            padding: 0 5%; 
+            margin-top: 60px; 
+            overflow: hidden;
+        }
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(27, 38, 19, 0.5) 0%, rgba(44, 62, 31, 0.3) 100%);
+            backdrop-filter: blur(3px); /* Transparencia esmerilada estilo macOS */
+            -webkit-backdrop-filter: blur(3px);
+            z-index: 2;
+        }
+        .hero-content { 
+            position: relative;
+            max-width: 850px; 
+            color: var(--text-light); 
+            z-index: 3;
+        }
+        .hero-content h1 { 
+            font-size: 3.8rem; 
+            margin-bottom: 1.2rem; 
+            text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            letter-spacing: -1px;
+        }
+        .hero-content p { 
+            font-size: 1.3rem; 
+            margin-bottom: 2.5rem; 
+            font-weight: 300;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        }
         .btn-main { background-color: var(--green-acre); color: var(--text-light); padding: 1rem 2.5rem; font-size: 1.1rem; border-radius: 30px; font-weight: 700; display: inline-block; transition: transform 0.3s, background 0.3s; box-shadow: 0 4px 15px rgba(107, 127, 84, 0.4); }
         .btn-main:hover { transform: translateY(-3px); background-color: var(--revere-green); }
 
@@ -56,7 +101,7 @@
         .feature-item:hover { transform: translateY(-5px); border-bottom-color: var(--green-acre); }
         .feature-item i { font-size: 2.5rem; color: var(--green-acre); margin-bottom: 1rem; }
 
-        /* --- GALLERY PREMIUM CORREGIDA --- */
+        /* --- GALLERY PREMIUM --- */
         .gallery { padding: 5rem 5%; background-color: var(--bg-offwhite); }
         .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 280px; gap: 20px; max-width: 1200px; margin: 0 auto; }
         .gallery-item { width: 100%; height: 100%; overflow: hidden; border-radius: 12px; position: relative; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
@@ -115,10 +160,12 @@
             .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 240px; }
             .gallery-item:nth-child(1), .gallery-item:nth-child(4), .gallery-item:nth-child(7) { grid-column: span 1; }
             .gallery-item:nth-child(1) { grid-row: span 1; }
+            .hero-content h1 { font-size: 3rem; }
         }
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .hero-content h1 { font-size: 2.5rem; }
+            .hero-content h1 { font-size: 2.4rem; }
+            .hero-content p { font-size: 1.1rem; }
             .location-content { grid-template-columns: 1fr; }
             .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 220px; gap: 15px; }
             .masterplan-iframe { height: 60vh; min-height: 400px; }
@@ -142,6 +189,11 @@
     </header>
 
     <section id="hero" class="hero">
+        <video class="hero-video" autoplay loop muted playsinline poster="https://picsum.photos/1920/1080?random=20">
+            <source src="https://res.cloudinary.com/dwuwtpbpp/video/upload/v1782753891/3maitenes_p9ijhk.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de video.
+        </video>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Parcelas Los Tres Maitenes</h1>
             <p>Descubre tu refugio perfecto en Fresia, Región de Los Lagos. Parcelas de 5000 m² rodeadas de naturaleza nativa, paz y alta plusvalía.</p>
@@ -211,7 +263,7 @@
                 </ul>
             </div>
             <div class="location-map">
-                <iframe src="https://maps.google.com/maps?q=-41.22583035619617,-73.3173470901525&t=k&z=14&output=embed" width="100%" height="400" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://maps.google.com/maps?q=-41.22583035619617,-73.3173470901525&t=k&z=15&output=embed" width="100%" height="400" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -267,7 +319,7 @@
             }
         });
 
-        // Procesamiento asíncrono del formulario
+        // Envíos asíncronos vía Fetch API
         document.getElementById('leadForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const form = this;
