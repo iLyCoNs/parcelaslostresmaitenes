@@ -6,8 +6,11 @@
     <title>Parcelas Los Tres Maitenes | Fresia, Los Lagos</title>
     <meta name="description" content="Venta de parcelas en Los Tres Maitenes, comuna de Fresia. Naturaleza, tranquilidad y alta plusvalía en la Región de Los Lagos.">
     
-    <!-- Google Fonts: Montserrat (Base & Top Title) y Cormorant Garamond (Main Title) -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Verificación de Google Search Console -->
+    <meta name="google-site-verification" content="pFa4ADtACKTCocLAFieI2gZLqv_IW07TDm3l3t_bd3U" />
+    
+    <!-- Google Fonts: Montserrat (Base, Top Title, Numeros de Precios) y Cormorant Garamond (Main Title) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -38,119 +41,49 @@
         .logo { display: flex; align-items: center; z-index: 1002; }
         .logo img { max-height: 55px; width: auto; display: block; }
         
-        /* Desktop Links */
         .nav-links { list-style: none; display: flex; gap: 2rem; align-items: center; }
         .nav-links a { font-weight: 600; transition: color 0.3s; }
         .nav-links a:hover { color: var(--revere-green); }
         .btn-cta-nav { background-color: var(--green-acre); color: var(--text-light); padding: 0.5rem 1.2rem; border-radius: 25px; font-weight: 600; transition: background 0.3s; }
         .btn-cta-nav:hover { background-color: var(--revere-green); }
 
-        /* --- MENU HAMBURGUESA MOBILE (Style macOS Trigger) --- */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-dark);
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            align-items: center;
-            gap: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            z-index: 1002;
-            transition: color 0.3s ease;
-        }
+        /* --- MENU HAMBURGUESA MOBILE --- */
+        .menu-toggle { display: none; background: none; border: none; color: var(--text-dark); font-size: 1.1rem; font-weight: 700; cursor: pointer; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 1px; z-index: 1002; transition: color 0.3s ease; }
         .menu-toggle i { font-size: 1.4rem; }
 
-        /* Panel Lateral macOS Transparente */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 100%;
-            height: 100vh;
-            background: rgba(27, 38, 19, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            z-index: 1001;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 2.5rem;
-            transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+        .mobile-menu { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background: rgba(27, 38, 19, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 1001; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2.5rem; transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
         .mobile-menu.active { right: 0; }
         .mobile-menu a { color: var(--text-light); font-size: 1.6rem; font-weight: 600; letter-spacing: 1.5px; transition: color 0.3s; }
         .mobile-menu a:hover { color: var(--accent-gold); }
         .mobile-menu .btn-cta-mobile { background-color: var(--green-acre); color: var(--text-light); padding: 0.8rem 2.5rem; border-radius: 30px; font-weight: 700; font-size: 1.4rem; box-shadow: 0 4px 15px rgba(107, 127, 84, 0.4); margin-top: 1rem; }
 
         /* --- HERO VIDEO SECTION --- */
-        .hero { 
-            position: relative;
-            min-height: 100vh; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            text-align: center; 
-            padding: 120px 5% 50px 5%; 
-            overflow: hidden;
-        }
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 5% 50px 5%; overflow: hidden; }
         .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(27, 38, 19, 0.5) 0%, rgba(44, 62, 31, 0.3) 100%); z-index: 2; }
         .hero-content { position: relative; max-width: 900px; color: var(--text-light); z-index: 3; width: 100%; display: flex; flex-direction: column; align-items: center; }
         
-        /* BLOQUE TIPOGRÁFICO PREMIUM (Reemplaza Logo Img) */
-        .hero-title {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.6);
-            animation: fadeInDown 1.2s ease-out;
-        }
-        .hero-title .top-word {
-            font-family: var(--font-base);
-            font-weight: 500; /* Medium */
-            font-size: 1.8rem;
-            letter-spacing: 8px;
-            text-transform: uppercase;
-            margin-bottom: -0.2rem;
-            color: var(--text-light);
-        }
-        .hero-title .bottom-words {
-            font-family: var(--font-title-main);
-            font-weight: 600; /* SemiBold */
-            font-size: 5.5rem;
-            text-transform: uppercase;
-            line-height: 1;
-            color: var(--text-light);
-            letter-spacing: 2px;
-        }
+        .hero-title { display: flex; flex-direction: column; align-items: center; margin-bottom: 1.5rem; text-shadow: 0 4px 15px rgba(0,0,0,0.6); animation: fadeInDown 1.2s ease-out; }
+        .hero-title .top-word { font-family: var(--font-base); font-weight: 500; font-size: 1.8rem; letter-spacing: 8px; text-transform: uppercase; margin-bottom: -0.2rem; color: var(--text-light); }
+        .hero-title .bottom-words { font-family: var(--font-title-main); font-weight: 600; font-size: 5.5rem; text-transform: uppercase; line-height: 1; color: var(--text-light); letter-spacing: 2px; }
 
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .hero-slogan { 
-            font-size: 1.3rem; 
-            margin-bottom: 2rem; 
-            font-weight: 400; 
-            text-shadow: 0 3px 10px rgba(0,0,0,0.8);
-            letter-spacing: 0.5px;
-            max-width: 700px;
-        }
+        .hero-slogan { font-size: 1.3rem; margin-bottom: 2rem; font-weight: 400; text-shadow: 0 3px 10px rgba(0,0,0,0.8); letter-spacing: 0.5px; max-width: 700px; }
 
         /* --- PRICING CARD HERO --- */
         .hero-pricing { background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 20px; padding: 2rem; margin: 0 auto 2.5rem auto; max-width: 650px; box-shadow: 0 15px 35px rgba(0,0,0,0.3); position: relative; width: 100%; }
-        .pricing-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent-gold); color: var(--premium-dark); padding: 5px 20px; border-radius: 25px; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .pricing-title { font-size: 1.2rem; margin-bottom: 1.5rem; font-weight: 600; }
+        .pricing-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent-gold); color: var(--premium-dark); padding: 5px 20px; border-radius: 25px; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); white-space: nowrap; }
+        .pricing-title { font-size: 1.2rem; margin-bottom: 1.5rem; font-weight: 600; line-height: 1.4;}
+        .pricing-subtitle { display: block; margin-top: 10px; color: var(--accent-gold); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; }
         .pricing-options { display: flex; justify-content: space-around; align-items: center; }
         .price-box { display: flex; flex-direction: column; gap: 5px; }
         .price-label { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; }
-        .price-value { font-family: var(--font-title-main); font-size: 2.8rem; font-weight: 600; color: var(--accent-gold); text-shadow: 0 2px 8px rgba(0,0,0,0.6); line-height: 1; }
+        /* Ahora el valor usa Montserrat (la misma del slogan) en lugar de Cormorant */
+        .price-value { font-family: var(--font-base); font-size: 2.5rem; font-weight: 700; color: var(--accent-gold); text-shadow: 0 2px 8px rgba(0,0,0,0.6); line-height: 1; }
         .price-divider { width: 1px; height: 60px; background: rgba(255, 255, 255, 0.4); }
 
         .btn-main { background-color: var(--green-acre); color: var(--text-light); padding: 1.2rem 3rem; font-size: 1.1rem; border-radius: 35px; font-weight: 700; display: inline-block; transition: transform 0.3s, background 0.3s; box-shadow: 0 6px 20px rgba(107, 127, 84, 0.5); text-transform: uppercase; letter-spacing: 1px; }
@@ -165,16 +98,18 @@
         .feature-item:hover { transform: translateY(-5px); border-bottom-color: var(--green-acre); }
         .feature-item i { font-size: 2.5rem; color: var(--green-acre); margin-bottom: 1rem; }
 
-        /* --- MASTERPLAN PREMIUM --- */
+        /* --- TOUR 360 PREMIUM --- */
         .masterplan { padding: 6rem 5%; background: linear-gradient(135deg, var(--premium-dark) 0%, var(--text-dark) 100%); text-align: center; position: relative; }
-        .masterplan .section-title { color: var(--accent-gold); }
+        .masterplan .section-title { color: var(--accent-gold); margin-bottom: 2rem; }
         .masterplan .section-title::after { background-color: var(--accent-gold); opacity: 0.5; }
-        .masterplan p { color: var(--bermuda-grass); margin-bottom: 3rem; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
         .masterplan-wrapper { max-width: 1200px; margin: 0 auto; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; box-shadow: 0 25px 50px rgba(0,0,0,0.5); padding: 15px; overflow: hidden; }
         .masterplan-iframe { width: 100%; height: 75vh; min-height: 550px; border-radius: 12px; border: none; display: block; }
 
-        /* --- GALLERY PREMIUM --- */
+        /* --- GALERÍA Y VIDEO PREMIUM --- */
         .gallery { padding: 5rem 5%; background-color: var(--bg-offwhite); }
+        .gallery-video-wrapper { max-width: 1200px; margin: 0 auto 3rem auto; background: var(--text-light); padding: 15px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid rgba(0,0,0,0.05); }
+        .gallery-video-embed { width: 100%; max-height: 600px; object-fit: cover; border-radius: 12px; display: block; outline: none; }
+        
         .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 280px; gap: 20px; max-width: 1200px; margin: 0 auto; }
         .gallery-item { width: 100%; height: 100%; overflow: hidden; border-radius: 12px; position: relative; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); filter: brightness(0.9); }
@@ -189,7 +124,44 @@
         .location-text ul { list-style: none; margin-top: 1.5rem; }
         .location-text li { margin-bottom: 1rem; display: flex; align-items: center; font-weight: 600; }
         .location-text i { color: var(--revere-green); margin-right: 15px; font-size: 1.2rem; }
-        .location-map iframe { border: 0; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        
+        /* Contenedor del Mapa Animado */
+        .location-map { position: relative; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; }
+        .location-map iframe { border: 0; width: 100%; height: 450px; display: block; }
+        
+        /* Botón Flotante Animado para Adultos Mayores */
+        .map-btn-float {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--accent-gold);
+            color: var(--premium-dark);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            animation: pulse-gold 2s infinite;
+            transition: transform 0.3s;
+        }
+        .map-btn-float:hover {
+            transform: translateX(-50%) scale(1.05);
+            animation: none;
+        }
+        .map-btn-float i { font-size: 1.3rem; }
+
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
 
         /* --- CONTACT SECTION --- */
         .contact { padding: 5rem 5%; background-color: var(--bg-offwhite); }
@@ -217,35 +189,56 @@
             .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 240px; }
             .gallery-item:nth-child(1), .gallery-item:nth-child(4), .gallery-item:nth-child(7) { grid-column: span 1; }
             .gallery-item:nth-child(1) { grid-row: span 1; }
-            
-            /* Tipografía Tablet */
             .hero-title .top-word { font-size: 1.5rem; letter-spacing: 6px; }
             .hero-title .bottom-words { font-size: 4rem; }
         }
+
+        /* --- OPTIMIZACIÓN EXTREMA MOBILE FIRST (Above the fold) --- */
         @media (max-width: 768px) {
             .menu-toggle { display: flex; }
             .nav-links, .navbar .btn-cta-nav { display: none; }
-            
             .navbar { padding: 0.8rem 5%; }
             .logo img { max-height: 45px; }
             
-            /* Tipografía Mobile Corrección */
-            .hero-title { margin-bottom: 1.5rem; }
+            /* Ajustes precisos para encajar todo en la primera pantalla */
+            .hero { padding: 90px 4% 30px 4%; align-items: flex-start; } /* Lo alineamos más arriba */
+            .hero-title { margin-bottom: 0.8rem; }
             .hero-title .top-word { font-size: 1.1rem; letter-spacing: 4px; margin-bottom: 0.2rem; }
-            .hero-title .bottom-words { font-size: 2.8rem; letter-spacing: 1px; text-align: center; }
+            .hero-title .bottom-words { font-size: 2.5rem; letter-spacing: 1px; text-align: center; }
             
-            .hero-slogan { font-size: 1.1rem; margin-bottom: 1.5rem; }
+            .hero-slogan { font-size: 0.95rem; margin-bottom: 1.2rem; line-height: 1.4; padding: 0 10px;}
             
-            .hero-pricing { padding: 1.5rem 1rem; margin-bottom: 2rem; }
-            .pricing-options { flex-direction: column; gap: 1rem; }
-            .price-divider { width: 80%; height: 1px; }
-            .price-value { font-size: 2.2rem; }
+            .hero-pricing { padding: 1.2rem 1rem 1rem 1rem; margin-bottom: 1.5rem; }
+            .pricing-badge { font-size: 0.75rem; padding: 3px 15px; top: -12px; }
+            .pricing-title { font-size: 0.9rem; margin-bottom: 0.8rem; line-height: 1.3;}
+            .pricing-subtitle { font-size: 0.8rem; margin-top: 5px; }
+            
+            /* Precios Lado a Lado en Mobile */
+            .pricing-options { flex-direction: row; gap: 0.5rem; justify-content: space-evenly; }
+            .price-divider { width: 1px; height: 50px; }
+            .price-label { font-size: 0.7rem; }
+            .price-value { font-size: 1.5rem; }
 
+            .btn-main { padding: 0.9rem 2rem; font-size: 1rem; }
+
+            /* Otras secciones */
             .location-content { grid-template-columns: 1fr; }
             .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 220px; gap: 15px; }
+            .gallery-video-wrapper { padding: 8px; }
             .masterplan-iframe { height: 60vh; min-height: 400px; }
             .contact-container { padding: 2rem; }
             .footer-logo { max-height: 55px; }
+            
+            /* Ajuste Botón Mapa Mobile */
+            .map-btn-float { font-size: 0.85rem; padding: 10px 20px; top: 15px;}
+            .location-map iframe { height: 350px; }
+        }
+
+        /* Ultra small phones */
+        @media (max-width: 380px) {
+            .hero-title .bottom-words { font-size: 2.1rem; }
+            .price-value { font-size: 1.3rem; }
+            .pricing-options { gap: 0.2rem; }
         }
     </style>
 </head>
@@ -259,8 +252,7 @@
             
             <ul class="nav-links">
                 <li><a href="#hero">Inicio</a></li>
-                <!-- Orden actualizado visualmente -->
-                <li><a href="#masterplan">Masterplan</a></li>
+                <li><a href="#tour">Tour 360°</a></li>
                 <li><a href="#galeria">Galería</a></li>
                 <li><a href="#entorno">Entorno</a></li>
             </ul>
@@ -275,8 +267,7 @@
 
     <div class="mobile-menu" id="mobileMenu">
         <a href="#hero">Inicio</a>
-        <!-- Orden actualizado visualmente -->
-        <a href="#masterplan">Masterplan</a>
+        <a href="#tour">Tour 360°</a>
         <a href="#galeria">Galería</a>
         <a href="#entorno">Entorno</a>
         <a href="#contacto" class="btn-cta-mobile">Cotizar Ahora</a>
@@ -299,21 +290,24 @@
             
             <div class="hero-pricing">
                 <span class="pricing-badge">Valor Único</span>
-                <p class="pricing-title">Todas las parcelas al mismo precio. ¡Elige tu ubicación favorita!</p>
+                <p class="pricing-title">
+                    Todas las parcelas al mismo precio. ¡Elige tu ubicación favorita!
+                    <span class="pricing-subtitle">Opciones de Compra:</span>
+                </p>
                 <div class="pricing-options">
                     <div class="price-box">
-                        <span class="price-label">Terreno Base</span>
+                        <span class="price-label">Lote Único</span>
                         <span class="price-value">$49.000.000</span>
                     </div>
                     <div class="price-divider"></div>
                     <div class="price-box">
-                        <span class="price-label">Con Tiny House</span>
+                        <span class="price-label">Lote con TinyHouse</span>
                         <span class="price-value">$68.000.000</span>
                     </div>
                 </div>
             </div>
 
-            <a href="#masterplan" class="btn-main">Ver Disponibilidad</a>
+            <a href="#tour" class="btn-main">Ver Disponibilidad</a>
         </div>
     </section>
 
@@ -343,19 +337,28 @@
         </div>
     </section>
 
-    <!-- MASTERPLAN SE HA MOVIDO ARRIBA DE LA GALERÍA -->
-    <section id="masterplan" class="masterplan">
-        <h2 class="section-title">Masterplan 360°</h2>
-        <p>Explora nuestro recorrido interactivo de clase mundial. Desliza, haz zoom y conoce la topografía de tu próxima inversión en tiempo real.</p>
+    <!-- SECCIÓN RENOMBRADA A TOUR 360 Y PÁRRAFO ELIMINADO -->
+    <section id="tour" class="masterplan">
+        <h2 class="section-title">Tour 360°</h2>
         
         <div class="masterplan-wrapper">
-            <iframe class="masterplan-iframe" src="https://ilycons.github.io/fresia360/" title="Masterplan Los Tres Maitenes 360" allowfullscreen></iframe>
+            <iframe class="masterplan-iframe" src="https://ilycons.github.io/fresia360/" title="Tour Los Tres Maitenes 360" allowfullscreen></iframe>
         </div>
     </section>
 
-    <!-- GALERÍA AHORA ESTÁ DEBAJO DEL MASTERPLAN -->
+    <!-- GALERÍA CON VIDEO INCORPORADO -->
     <section id="galeria" class="gallery">
         <h2 class="section-title" style="text-align: center;">Visualiza tu Futuro</h2>
+        
+        <!-- Contenedor Premium del Video -->
+        <div class="gallery-video-wrapper">
+            <!-- Se añadieron controles (controls) para que el usuario interactúe -->
+            <video class="gallery-video-embed" controls poster="https://picsum.photos/1920/1080?random=20">
+                <source src="https://res.cloudinary.com/dwuwtpbpp/video/upload/v1782753891/3maitenes_p9ijhk.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+        </div>
+
         <div class="gallery-grid">
             <div class="gallery-item"><img src="https://picsum.photos/1000/800?random=1" alt="Entorno Los Tres Maitenes 1"></div>
             <div class="gallery-item"><img src="https://picsum.photos/800/600?random=2" alt="Entorno Los Tres Maitenes 2"></div>
@@ -381,7 +384,11 @@
                 </ul>
             </div>
             <div class="location-map">
-                <iframe src="https://maps.google.com/maps?q=-41.22583035619617,-73.3173470901525&t=k&z=15&output=embed" width="100%" height="400" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- Botón de apertura rápida para adultos mayores -->
+                <a href="https://maps.google.com/maps?q=-41.22583035619617,-73.3173470901525" target="_blank" class="map-btn-float">
+                    <i class="fa-solid fa-location-dot"></i> Abrir en Google Maps
+                </a>
+                <iframe src="https://maps.google.com/maps?q=-41.22583035619617,-73.3173470901525&t=k&z=15&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -409,7 +416,7 @@
                 </div>
                 <div class="form-group">
                     <label for="mensaje">¿Qué parcela te interesa?</label>
-                    <textarea id="mensaje" name="Mensaje" rows="4" placeholder="Me gustaría recibir más información y conocer los valores..."></textarea>
+                    <textarea id="mensaje" name="Mensaje" rows="4" placeholder="Me gustaría recibir el brochure y conocer los valores..."></textarea>
                 </div>
                 <button type="submit" class="btn-submit">Solicitar Información</button>
             </form>
